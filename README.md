@@ -5,7 +5,7 @@
 ## Criteria A: Planning
 
 ### Problem definition
-My client is a student at a local school. After meeting with her (see Appendix A) I learned that very Monday morning at her advisory, she fills out the Komodo survey, a survey that checks the students' wellbeing at her school. However, she feels like the survey has too many questions, it is sometimes not accurate enough, and it does not allow her to express all her feelings. She would like to write a personal diary, but as she lives with 3 roommates, she thinks she would not have enough privacy. She would like to be able to write about her feelings every day, and then to have a way to organize the writings by category, according to what she is talking about. My client needs a cost effective, efficient, and more private way to track her emotions and write about them. 
+My client is the owner of a little convenience store at a local school. After meeting with her (see Appendix A) I learned that every Thursday she opens her "konbini", where . However, she feels like the survey has too many questions, it is sometimes not accurate enough, and it does not allow her to express all her feelings. She would like to write a personal diary, but as she lives with 3 roommates, she thinks she would not have enough privacy. She would like to be able to write about her feelings every day, and then to have a way to organize the writings by category, according to what she is talking about. My client needs a cost effective, efficient, and more private way to track her emotions and write about them. 
 
 ### Rationale for proposed solution
 OOP is the programming paradigm.The application will have a sign up and login system with encrypted password, to increase security. The application will be minimalistic and simple for it to be user-friendly. Once the user has passed the login system, a main menu will appear. There, user will be able to select and emotion and write how she is feeling. She can also access past notes organised in folders by emotion. The tools I am using for this are Python, Kivy, and SQL.
@@ -23,20 +23,20 @@ Overall, the combination of Python, Kivy, and SQLite provides a cost-effective, 
 ### Success criteria:
 After meeting with the client ans sending her an email (See Appendix B), we agreed the following success criteria:
 1. There is a secure registration and login system with requirements for password and email.
-2. The application will contain a page asking how the client is feeling, to which the client will only be able to answer selecting one of the options given.
-3. After selecting the feeling, the customer will be able to write notes about it.
-4. The notes will be grouped in folders by the adjectives, and will have a date.
-5. The application will allow the client to delete and add notes.
-6. The application will give statistical information about the user's well-being: number of positive and negative emotions felt.
+2. The website will 
+3. The website will
+4. The website will
+5. The website will allow the client to write and delete their own posts.
+6. The website will give statistical information: number of producsts available, number of .
 
 # Criteria B: Design
 ## Design statement
-I will design and make an application for writing a mood diary for a client who is a student at UWC ISAK Japan. The program will consist on an application for being able to keep track of her mood every day, plus being able to write some notes and having them organized by feeling. It is constructed using the softwares Python, Kivy, and SQLite. It will take 3 weeks to make and will be evaluated according to the criteria A, B, C, and D.
+I will design and make an website for writing a mood diary for a client who is a student at UWC ISAK Japan. The program will consist on an application for being able to keep track of her mood every day, plus being able to write some notes and having them organized by feeling. It is constructed using the softwares Python, Kivy, and SQLite. It will take 3 weeks to make and will be evaluated according to the criteria A, B, C, and D.
 
 ## Creativity
-The app is called YasModo. It is a game of words between the name of the client and the application she uses every week, Komodo. Also because "modo" sounds like "mood" and "Yas" like "Yes" (YesMood).
+The app is called Konbinet. It is a game of words between "Konbini" (convenience store) and "Net" (network, SNS).
 
-The colour palette for this project is tones pink and purple, with some variations, as these are the favourite colours of the client, and ones that produce a lot of peace on her.
+The colour palette for this project is tones ____, with some variations, as these are the favourite colours of the client, and ones that produce _____.
 
 ## Test Plan
 | TEST                                              | DESCRIPTION                                                                  | PROCEDURE                                                                                                  | EXPECTED OUTPUT                                                                                                                    |
@@ -78,40 +78,7 @@ Fig. 4 is the UML diagram for the classes of my program.
 
 
 ## Record of Tasks
-| Task No |       Planned Action       |                               Planned Outcome                               | Time estimate | Target completion date | Criterion |
-|:-------:|:--------------------------:|:---------------------------------------------------------------------------:|:-------------:|:----------------------:|:---------:|
-|    1    |  First meeting with client |              Client described her requiremetns for the project              |     10min     |         Feb 10         |     A     |
-|    2    | Second meeting with client |             Write Success Criteria and Client gives her agreeing            |     10min     |         Feb 20         |     A     |
-|    3    |  Write the problem context |                              Problem definition                             |     10min     |         Feb 20         |     A     |
-|    4    |   Write proposed solution  | Have a better understanding of what I have to do and write design statement |     15min     |         Feb 22         |     A     |
-|    5    |      Create first page     |           Code first page, which contains login and singup buttons          |     45min     |         Feb 28         |     C     |
-|    6    |     Create sign up page    |                          Code sign up and database                          |       1h      |         Feb 28         |     C     |
-|    7    |     Create log in page     |                    Code log in and connect it to database                   |       1h      |         Feb 28         |     C     |
-|    8    |       Make prototype       |                 Draw a digital protoype (Wireframe diagram)                 |       2h      |          Mar 1         |     B     |
-| 9       | Third meeting with client  | Progress Check and show digital prototype                                   | 10min         | Mar 2                  | B         |
-| 10      | Flowchart                  | Make flowchart diagrams                                                     | 1h            | Mar 5                  | B         |
-| 11      | UML Diagram                | Draw UML Diagram                                                            | 20min         | Mar 5                  | B         |
-| 12      | ER Diagram                 | Draw ER Diagram                                                             | 10min         | Mar 5                  | B         |
-| 13      | Sign up requirements       | Add password and email requirements                                         | 40min         | Mar 6                  | C         |
-| 14      | Make main page             | Code main page of the program, with 4 buttons                               | 30min         | Mar 6                  | C         |
-| 15      | Make buttons feelings      | Code the feelings buttons and connect to database                           | 1h            | Mar 6                  | C         |
-| 16      | Make folders buttons       | Code the folders buttons based on the the feelings buttons                  | 10min         | Mar 6                  | C         |
-| 17      | Delete note                | Code how to delete a note                                                   | 10min         | Mar 6                  | C         |
-| 18      | Cancel and back buttons    | Code cancel and back buttons to put everywhere around the program           | 15min         | Mar 6                  | C         |
-| 19      | SQL check                  | Make changes on names of tables and columns so it is more user-friendly     | 15min         | Mar 7                  | C         |
-| 20      | Database check             | Add username as a column of the notes table                                 | 10min         | Mar 7                  | C         |
-| 21      | Design check               | Check kivy program and adjust design to make it more user-friendly          | 1h            | Mar 7                  | C         |
-| 22      | Code review                | Make sure that there are comments everywhere                                | 30min         | Mar 7                  | C         |
-| 23      | Make statistics            | Code statistics screen and add a progress bar                               | 1h            | Mar 7                  | C         |
-| 24      | Test plan                  | Try tests and write on GitHub                                               | 30min         | Mar 7                  | B         |
-| 25      | Code in GitHub             | Paste code on GitHub and explain it                                         | 1h            | Mar 8                  | C         |
-| 26      | Sources                    | Get summary of all sources and put on repository                            | 10min         | Mar 9                  | C         |
-| 27      | Tools used                 | Write tools used for unit 3                                                 | 5min          | Mar 9                  | C         |
-| 28      | Check functionality        | Use the final app as a user, test it                                        | 30min         | Mar 9                  | D         |
-| 29      | Video                      | Record video                                                                | 15min         | Mar 10                 | D         |
-| 30      | Flow diagram                      |  Make flow diagram of the Sign Up screen                                                                | 1h         | Mar 10                 | B         |
-| 31      | Flow diagram                      | Make flow diagram of the Statistics class                                                                | 1h         | Mar 10                 | B         |
-
+xxxxxxxx
 
 **Table 2:** Record of Task- showing the planning and working process of the project. All the steps are related to Planning, Solution Overview analysis and Development, and Functionality (criterias A, B C, and D). The target completion date and the time estimate for each task is also shown.
 
