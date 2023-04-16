@@ -99,7 +99,7 @@ explanation
 - YouTube.com
 - Chat GPT
 
-## Tools used in Unit 4
+## Techniques used in Unit 4
 - Functions
 - For/while loops
 - Input Validation
@@ -109,6 +109,8 @@ explanation
 - Relational databases
 - SQLite, ORM
 - Others
+
+Explain these in the text for criteria C
 
 # Criteria D: Functionality
 
@@ -125,3 +127,13 @@ She wants xxx
 
 ## B: Success Criteria confirmation:
 screenshot of email
+
+## C:
+
+## D:
+
+## E:
+
+## F:
+
+## G:
