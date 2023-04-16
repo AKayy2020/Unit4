@@ -25,11 +25,12 @@ The proposed solution could be more clear. Start by saying what type of applicat
 ### Success criteria:
 After meeting with the client ans sending her an email (See Appendix B), we agreed the following success criteria:
 1. There is a secure registration and login system with requirements for password and email.
-2. The website will 
-3. The website will
-4. The website will
-5. The website will allow the client to write and delete their own posts.
-6. The website will give statistical information: number of producsts available, number of .
+2. The website will have a user-friendly interface with clear and concise information about the products, prices, and promotions available at Konbini.
+3. The website will allow customers to upvote products they would like to see more frequently in the Konbini's inventory.
+4. The website will have a section for weekly updates and news about new products and promotions happening at the Konbini.
+5. The website will allow customers to post comments and reviews on products from the Konbini, and to delete them when needed.
+6. The website will give statistical information: number of producsts available, number of users signed up, number of active users?, posts written.
+7. Only the Konbini managers will be able to delete other user's posts and to write on the news section.
 
 # Criteria B: Design
 ## Design statement
