@@ -5,7 +5,7 @@
 ## Criteria A: Planning
 
 ### Problem definition
-My client is the co-owner of a little convenience store at a local school. After meeting with her (see Appendix A) I learned that every Thursday she opens her "Konbini", where she sells products to students and some teachers. However, she feels like it is sometimes hard to know which products the customers want the most, and to let them know what they are selling every week and when. She would like to improve the Konbini's marketing and to promote customer-business interaction, but as students are very busy, she thinks they would not have time for in-person events. She would like the Konbini to have a SNS website where customer can write reviews, upvote the products they want and receive updates and news. My client needs a cost effective, efficient, and more interactive way to promote the Konbini's products and gather feedback from customers.
+My client is the co-owner of a little convenience store at a local school. After meeting with her (see Appendix A) I learned that every Thursday she opens her "Konbini", where she sells products to students and some teachers. However, she feels like it is sometimes hard to know which products the customers want the most, and to let them know what they are selling every week and when. She would like to improve the Konbini's marketing and to promote customer-business interaction, but as students are very busy, she thinks they would not have time for in-person events. She has tried to send emails with feedback forms but students seem to ignore them because it is not attractive and practical. She would like the Konbini to have a SNS website where customer can write reviews, upvote the products they want and receive updates and news. My client needs a cost effective, efficient, and more interactive way to promote the Konbini's products and gather feedback from customers.
 
 ### Rationale for proposed solution
 OOP is the programming paradigm??? According to the client's needs, I will develop a Social Networking Service (SNS) in the form of website. The website will have an initial landing page where potential users will be called to sign up and login, with a system with encrypted password to increase security. The website will be minimalistic and simple for it to be user-friendly. Once the user has passed the login system, a main menu will appear. There, user will be able to ... Users can also access ... The tools I am using for this are Python, HTML, CSS and SQL.
@@ -25,7 +25,7 @@ The proposed solution could be more clear. Start by saying what type of applicat
 ### Success criteria:
 After meeting with the client ans sending her an email (See Appendix B), we agreed the following success criteria:
 1. There is a secure registration and login system with requirements for password and email.
-2. The website will have a user-friendly interface with clear and concise information about the products, prices, and promotions available at Konbini.
+2. The website's interface is user-friendly and accessible for color-blind people.
 3. The website will allow customers to upvote products they would like to see more frequently in the Konbini's inventory.
 4. The website will have a section for weekly updates and news about new products and promotions happening at the Konbini.
 5. The website will allow customers to post comments and reviews on products from the Konbini, and to delete them when needed.
