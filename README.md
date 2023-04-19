@@ -1,5 +1,11 @@
 # Project 4: Konbinet, the best social media
 
+to have by now:
+- A
+- B (Test plan and more)
+- RoT 15-21
+- Development documented
+
 ![Hotpot (1)](https://user-images.githubusercontent.com/89135778/230832513-d6722d51-e9ed-41e6-be9a-35451d10d151.png)
 
 ## Criteria A: Planning
