@@ -172,12 +172,21 @@ Fig. 4 is the UML diagram for the classes of my program.
 - Functions
 - For/while loops
 - Input Validation
-- If statements
+- Conditional statements
 - Encryption
-- OOP paradigm
 - Relational databases
-- SQLite, ORM
-- Others
+- Variables
+- Lists
+- Error handlers
+- Base templates extensions
+- Tags
+- Content block
+- Use of files and/or databases to save/load persistent data: SQLite database to store user information, posts, products, updates, images, and messages.
+- Use of dynamic data structures: dictionaries to store user data in session cookies.
+- Use of multiple programming languages: Python, HTML, Jinja2 templates, CSS.
+- Use of object-oriented design: encapsulate database access and password encryption and checking functionality in a separate module (p4_lib.py).
+- Use of nested control structures: password validation in the signup function.
+
 
 ## Code
 * More details on the comments of the code
@@ -390,14 +399,26 @@ That was one problem I had during the development process: I had to figure out h
 
 The website that helped me in the SQL queries was: https://blog.hubspot.com/marketing/sql-tutorial-introduction
 
+## Ingenuity
+Some of the good coding practices I have followed are:
+- Descriptive variable names
+- Form input validation: Sign up form, for example.
+- Exceptions/error handling
+- Use of autocomplete attributes in username and email to improve user experience
+- Use of whitespaces and indentations for developer’s readability
+- Code organization: folders, tags (headers, footers, body, main, etc)
+- Comments when needed
+- Use of camelCase for classes, snake_case for functions and variables, kebab-case for CSS attributes.
+- Use of DRY (Don’t Repeat Yourself) programming principle for my HTML pages: I only had two template bases that I used in all the rest of the pages. Also for saving my queries for the database.
 
-## Sources
-- StackOverFlow.com
-- YouTube.com
-- Chat GPT
-
-
-Explain these in the text for criteria C
+Example of error handling:
+```.py
+# error handling
+@app.errorhandler(Exception)
+def handle_error(e):
+    return "Oops, there's an error. Please notify the admin in admin@gmail.com and go back", 500
+```
+![image](https://github.com/PaulaYaniz/Unit4/assets/89135778/cd02489a-d820-4cc2-9ee2-dd5aa7e23913)
 
 # Criteria D: Functionality & Extensibility
 
