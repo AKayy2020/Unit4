@@ -182,9 +182,63 @@ Fig. 4 is the UML diagram for the classes of my program.
 ## Code
 * More details on the comments of the code
 
-### Choose Login or Singup
+### Sign up page
 ```.py
-# Code
+# password requirements
+def password_requirements(password):
+    if len(password) < 8:
+        return False
+    if not re.search(r'[A-Z]', password):
+        return False
+    if not re.search(r'[a-z]', password):
+        return False
+    if not re.search(r'[1-9]', password):
+        return False
+    return True
+
+# sign up system
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    # error message is initially blank
+    message = ""
+    # when user clicks "SUBMIT" button in form
+    if request.method == 'POST':
+        # get user data from sign up form
+        email = request.form['email']
+        username = request.form['username']
+        password = request.form['password']
+        
+        # password requirements not being followed
+        if not password_requirements(password):
+            message = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character."
+        else:
+            # check if account already exists
+            db = DatabaseWorker("p4_database.db")
+            user = db.search(f"SELECT * from users where email = '{email}' or username = '{username}'")
+            # if user is in database, exists
+            if user:
+                message = "Username or email already exists. Try log in."
+            else:
+                # put data from form into database
+                query = f"""INSERT into users(email, username, password, joined) values ('{email}', '{username}','{encrypt_password(password)}','{datetime.now()}')"""
+                db.run_save(query)
+                # get user id
+                user = db.search(f"SELECT * from users where email = '{email}'")[0]
+                user_id = user[0]
+                # get values for saving in cookies
+                session['user'] = {
+                    'id': user_id,
+                    'username': username,
+                    'email': email,
+                    'joined': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                }
+                # redirect to home, logged in, with cookies
+                response = make_response(redirect(url_for('home')))
+                response.set_cookie('user_id', f"{user_id}")
+                db.close()
+                return response
+    return render_template("p4_signup.html", error_msg=message)
+
 ```
 explanation
 
