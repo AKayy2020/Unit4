@@ -295,7 +295,8 @@ For HTML, my code consists of the use of a template for all the common code part
 ```
 According to Success Criteria 1, my user needs that key pages in the website are available only to users logged in. That is why I have this code, which I use in the pages with this requirement.
 
-Following with the previous code provided, where I show how I create 'user', this first line checks if the ‘user’ key is present in the session, which is where user data is stored after logging in. If ‘user’ is not present in the session, it means that the user has not logged in, so the boolean of False would return, not allowing user to visualize the page, and redirecting them to  the login page.
+Following with the previous code provided, where I show how I create 'user', this first line checks with a conditional statement if the ‘user’ key is present in the session, which is where user data is stored after logging in. If ‘user’ is not present in the session, it means that the user has not logged in, so the boolean of False would return, not allowing user to visualize the page, and redirecting them to  the login page.
+
 
 For this I have use the KISS (Keep It Simple, Stupid!) programming principle, as it is a basic code but very useful.
 
@@ -379,7 +380,15 @@ def messages():
 </main>
 {% endblock %}
 ```
+According to Success Criteria 6, my client needs a one-to-one messaging system.
 
+For doing so, I have used Algorithmic thinking: in conditional statements, loops, and SQL queries to handle user input and interact with databases. For example, Abstraction (encapsulating the database interactions in a separate class DatabaseWorker). Decomposition (breaking down the task into smaller functions, like getting messages from database, inserting new messages into database, and rendering HTML templates).
+
+If the user is logged in and a program receives a POST request (user submitting a message), the function gets the message details from the HTML form and inserts them into the messages table in the database using an SQL query. If GET request (nothing needs to be clicked, it is automatic), the function gets all messages received or sent by the user from the database using two SQL queries and renders the p4_messages.html template, passing in the messages as parameters.
+
+That was one problem I had during the development process: I had to figure out how to distinguish between the messages that the users receive and the messages they send. The solution was to use an SQL query to filter the data according to which messages had the name of my user as a value in different columns (WHERE receiver='{username}' ORDER BY id DESC, for example). If it was in the receiver column, I would add that to a list called ‘messages_in’, and if my user was the sender to ‘messages_out’. This technique was an adequate solution because it is a standard way of filtering data with SQL queries into a relational database and is efficient in terms of time and memory complexity. Then I would use those lists to display the messages with HTML, doing a loop instead of hard-coding to avoid breaking DRY and KISS principles.
+
+The website that helped me in the SQL queries was: https://blog.hubspot.com/marketing/sql-tutorial-introduction
 
 
 ## Sources
