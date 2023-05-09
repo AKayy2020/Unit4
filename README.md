@@ -61,7 +61,7 @@ After meeting with the client _(See Appendix B)_, we agreed on the following suc
 | 2       | Write Problem Scenario                   | Explain problem given by client in previous meeting                                                              | 10min         | Apr 6                  | A         |
 | 3       | Research tools that will be used         | Find proposed solution for client's problem                                                                      | 10min         | Apr 7                  | A         |
 | 4       | Write Rationale of the Proposed Solution | Have a better understanding of project's goal according to client's needs                                        | 15min         | Apr 10                 | A         |
-| 5       | Write Success Criteria                   |                                                                                                                  | 15min         | Apr 10                 | A         |
+| 5       | Write Success Criteria                   | Success criteria that meets client's needs                                                                       | 15min         | Apr 10                 | A         |
 | 6       | Second meeting with client               | Approval of Proposed Solution and Success Criteria                                                               | 10min         | Apr 11                 | A         |
 | 7       | Draw System Diagram                      | Create a visual representation of the system architecture.                                                       | 20min         | Apr 11                 | B         |
 | 8       | Draw Wireframe Diagram                   | Create a visual representation of the user interface.                                                            | 1h            | Apr 12                 | B         |
@@ -183,6 +183,8 @@ Fig. 4 is the UML diagram for the classes of my program.
 * More details on the comments of the code
 
 ### Sign up page
+![image](https://github.com/PaulaYaniz/Unit4/assets/89135778/ca2db793-c1b7-4c68-9d06-2519769904e5)
+
 ```.py
 # password requirements
 def password_requirements(password):
@@ -240,7 +242,145 @@ def signup():
     return render_template("p4_signup.html", error_msg=message)
 
 ```
-explanation
+```.html
+{% extends "p4_base_landing.html" %}
+{% block content %}
+<main>
+    <h1>Sign Up</h1>
+    <h3 class="error">{{ error_msg }}</h3>
+    <form action="/signup" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Sign Up" class="submit-btn">
+    </form>
+
+    <p>You are already registered? <a href="/login">Log in</a>.</p>
+</main>
+{% endblock %}
+```
+According to the client’s needs, more specifically Success Criteria 2, I developed a sign up system.
+
+This code includes a Flask route for a sign-up page that allows users to create an account in my website. After clicking on the Sign Up button, user goes to ‘/signup’ URL, where they can complete a form with their email, username, and password.
+
+For this code, I have used my Computational Thinking Skills. I have used Decomposition, the process of breaking down a complex problem into more manageable parts, for the whole sign up system: checking password requirements, checking if an account already exists, inserting new user’s data in the database, etc.
+
+I use Algorithmic thinking skills in the ‘password_requirements’ function. This function checks if the length of the password is at least 8, then uses pattern recognition to check if there is at least one uppercase, one lowercase, one number, and one special character in the password created by the user. Finally, it uses abstraction to return a boolean value according to if the requirements are met or not.. 
+
+I use the Flask framework to handle HTTP requests and responses. The function ‘signup()’ handles GET and POST requests that come from ‘/signup’. If the request is GET, then the function renders the signup page, that is an HTML template. If the request is POST, the function processes the form data submitted by user.
+
+I use a dictionary for the ‘request.form’, where I get data from the form in the page using the POST request. The email, username, and password are extracted from the form and stored in separate variables.
+
+When I use the ‘password_requirements’ function it checks if password meets certain requirements. If it doesn't meet the requirements, an error message is displayed, which is saved in a variable (initially blank). If not, function checks if the email or username already exists in the database. If they exist, another error message is displayed. If they don't exist, the function inserts the new user's data into the database, with the hashed password (I use a function for hashing it).
+
+If the function encounters any errors, it renders the sign up page again, displaying the appropriate error message. The error message is passed to the HTML template as a parameter called ‘error_msg’.
+
+If the user does not exist in the database, the function inserts the user's data into the database, creating the new user, it gets the user_id. The function also sets cookies with the user's ID and redirects the user to the home page.
+
+During the development process, a problem I encountered was how to store user data and how to retrieve it later to check if a user exists or not, correctly. My solution was to use an SQLite database and a DatabaseWorker class to insert and get data in the database. I use SQLite databases to create tables, insert data, and search for data using the SQL queries. Another problem was how to securely store user passwords in the database. My solution was to use a secure password encryption algorithm and store the encrypted password in the database.
+
+For HTML, my code consists of the use of a template for all the common code parts of the website, following with the DRY (Don’t Repeat Yourself) programming principle. After that I have a h1 tag (as a title), an space for the error message in case there is one, and the form with the fields the user has to choose.
+
+### Login requirements for page visualization 
+```.py
+    # login is required for this action
+    if 'user' not in session:
+        return redirect(url_for('login'))
+```
+According to Success Criteria 1, my user needs that key pages in the website are available only to users logged in. That is why I have this code, which I use in the pages with this requirement.
+
+Following with the previous code provided, where I show how I create 'user', this first line checks if the ‘user’ key is present in the session, which is where user data is stored after logging in. If ‘user’ is not present in the session, it means that the user has not logged in, so the boolean of False would return, not allowing user to visualize the page, and redirecting them to  the login page.
+
+For this I have use the KISS (Keep It Simple, Stupid!) programming principle, as it is a basic code but very useful.
+
+I learned how to do this by accessing https://pythonbasics.org/flask-sessions/ .
+
+### One-to-one messages system
+![image](https://github.com/PaulaYaniz/Unit4/assets/89135778/50ca2426-5d9c-456e-b68f-cf848d5722fb)
+```.py
+# messages
+@app.route('/messages', methods=['GET', 'POST'])
+def messages():
+    # login is required for this action
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
+    # when user clicks submit in the form
+    if request.method == 'POST':
+        # get message written from form
+        sender = session['user']['username']
+        receiver = request.form['message-receiver']
+        title = request.form['message-title']
+        content = request.form['message-content']
+        # insert new message in database
+        db = DatabaseWorker("p4_database.db")
+        query = f"""INSERT INTO messages (sender, receiver, title, content) VALUES ('{sender}', '{receiver}', '{title}', '{content}')"""
+        db.run_save(query)
+        db.close()
+
+    # get all posts from database to display later
+    db = DatabaseWorker("p4_database.db")
+    # get username of user logged in
+    username = session['user']['username']
+    # lists for messages sent or received by user logged in
+    messages_in = db.search(f"""SELECT * FROM messages WHERE receiver='{username}' ORDER BY id DESC""")
+    messages_out = db.search(f"""SELECT * FROM messages WHERE sender='{username}' ORDER BY id DESC""")
+    db.close()
+    return render_template('p4_messages.html', messages_in=messages_in, messages_out=messages_out)
+```
+```.html
+{% extends "p4_base_logged.html" %}
+{% block content %}
+<main class="forum">
+    <div class="forum-grid">
+        <div class="new-post">
+            <h2>New Message</h2>
+            <form class="post-form" method="POST">
+                <label for="message-receiver">To:</label>
+                <input type="text" id="message-receiver" name="message-receiver" required>
+                <label for="message-title">Title:</label>
+                <input type="text" id="message-title" name="message-title" required>
+                <label for="message-content">Content:</label>
+                <textarea id="message-content" name="message-content" rows="8" required></textarea>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+        <div class="forum-posts">
+            <h2>Inbox</h2>
+            {% for message in messages_in %}
+            <div class="post">
+                <h3 class="post-title">{{ message[3] }}</h3>
+                <p class="post-content">{{ message[4] }}</p>
+                <div class="post-meta">
+                    <span>Received from {{ message[1] }} on {{ message[5] }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+         <div class="forum-posts">
+            <h2>Outbox</h2>
+            {% for message in messages_out %}
+            <div class="post">
+                <h3 class="post-title">{{ message[3] }}</h3>
+                <p class="post-content">{{ message[4] }}</p>
+                <div class="post-meta">
+                    <span>Sent to {{ message[2] }} on {{ message[5] }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}
+```
+
+
 
 ## Sources
 - StackOverFlow.com
