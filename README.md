@@ -535,19 +535,20 @@ Program files are available in the project folder.
 
 # Criteria E: Evaluation
 ## Evaluation
-After meeting with the client _(see Appendix X for full interview transcript)_, I got to the conclusion that I successfully satisfied the client’s needs and goals for this website.
-
-### Beta tester evaluation:
-After meeting with my beta tester (see Appendix X for interview transcript), I discovered that as a loyal Konbini client, Mr. D. is happy with the website and says he will start using it to connect with other Konbini fans about his favorite products. He likes the statistical information and the prices tables, which he finds interesting and useful. However, he did not like that the posts do not have a like button, and agreed with the developer that it should be added (see Recommendations section for more details).
-
 ### Client evaluation:
 The product satisfied all the success criteria initially established.
 1. The first thing I see when entering the link is a welcome page (landing page). I like that it contains pictures of what the website does once registered. I felt excited about registering!
 2. I liked how the website had the privacy needed: all the important parts of the website are behind the registration page. I can also see how there are password requirements to increase security. However, it should not let students from outside the school to register, so it should only allow users with the school’s email domain.
 3. I see how I can quickly write an update for my clients to see, and delete it when needed. This is solving many problems for me!
 4. I also like how I can update very fast the prices and products available at the store. I am satisfied with that!
-5. I am fascinated by how effectively users can write posts, and I love even more than I am able (as an admin) to delete them. This will allow me to delete all the posts that criticize my store, thank you!
-6. I found the statistics part very interesting, I wondered for a long time which where the numerical data and info of the users and products.
+5. I am fascinated by how effectively users can write posts, and I love even more than I am able (as an admin) to delete them. This will allow me to delete all the posts that criticize my store, thank you! However, the images section is not very functional, as I can find errors if I use a special selection of inputs.
+6. You provided a great solution for the messages page. Now I can write private 1-to-1 messages to my customers, and they can do the same!
+7. I found the statistics part very interesting, I wondered for a long time which where the numerical data and info of the users and products.
+
+In the meeting _(see Apendix C for questionnaire)_ I discovered that this feedback the client has provided is very useful for me as a developer. Now I know that I got good understanding of my client's requirements, as I have met them all. About the areas for improvement, they look reasonable and I am excited about working with them in the future. Overall, it has been a challenging but rewarding project.
+
+### Beta tester evaluation:
+After meeting with my beta tester _(see Appendix D for interview transcript)_, I discovered that as a loyal Konbini client, Mr. D. is happy with the website and says he will start using it to connect with other Konbini fans about his favorite products. He likes the statistical information and the prices tables, which he finds interesting and useful. However, he did not like that the posts do not have a like button, and agreed with the developer that it should be added (see Recommendations section for more details).
 
 ## Recommendations
 1. Add a likes function for the posts. Currently, users can just publish the posts, but cannot interact with them. A good extension would be to allow users to indicate which posts are their favorite, as many social media do. I think this would be manageable, but would require modifying the data that each post contains in the database to include those likes.
@@ -590,3 +591,68 @@ DEVELOPER: Thank you! This is the success criteria [success criteria shown]. Wha
 CLIENT: That sounds perfect! I agree with everything.
 
 DEVELOPER: Thank you! Let's get started with your SNS website.
+
+### Appendix C: Client questionnaire for evaluation
+Questionnaire:
+
+1. What is your impression of the landing page?
+
+Answer: The first thing I see when entering the link is a welcome page (landing page). I like that it contains pictures of what the website does once registered. I felt excited about registering!
+
+2. How do you feel about the registration and login system?
+
+Answer: I liked how the website had the privacy needed: all the important parts of the website are behind the registration page. I can also see how there are password requirements to increase security. However, it should not let students from outside the school register, so it should only allow users with the school's email domain.
+
+3. What are your thoughts on the updates section?
+
+Answer: I see how I can quickly write an update for my clients to see and delete it when needed. This is solving many problems for me!
+
+4. How do you find the editing of product prices and availability?
+
+Answer: I also like how I can update very fast the prices and products available at the store. I am satisfied with that!
+
+5. How do you feel about the post and picture uploading functionality?
+
+Answer: I am fascinated by how effectively users can write posts, and I love even more than I am able (as an admin) to delete them. This will allow me to delete all the posts that criticize my store, thank you! However, the images section is not very functional, as I can find errors if I use a special selection of inputs.
+
+6. What is your opinion of the one-to-one private message system?
+
+Answer: You provided a great solution for the messages page. Now I can write private 1-to-1 messages to my customers, and they can do the same!
+
+7. How do you find the statistical information provided?
+
+Answer: I found the statistics part very interesting. I wondered for a long time what the numerical data and info of the users and products were.
+
+Thank you for your feedback!
+
+### Appendix D: Beta tester evaluation
+Developer: Hi there! I wanted to get your feedback on the website we've been working on. Did you have a chance to test it out?
+
+Tester: Yes, I did. Overall, I think the website is great! As a loyal Konbini client, I'm really happy with it. The landing page is inviting and the pictures give a good idea of what the website offers.
+
+Developer: That's great to hear! We wanted to create a welcoming experience for users. How did you find the registration and login system?
+
+Tester: I think it's secure and meets the requirements. However, I do have one suggestion. Since this is a website for the school, it should only allow users with the school's email domain to register. That way, we can restrict access to only students from our school.
+
+Developer: That's a valid point. We can definitely implement that restriction to enhance the privacy and exclusivity of the website.
+
+Tester: Perfect! Moving on, I found the updates section really useful. It allows me to quickly share information with my clients and delete it when necessary. It's a great solution for our needs.
+
+Developer: I'm glad you found it helpful! It's designed to make updates convenient for you. What about the editing of product prices and availability? Did you find it easy to use?
+
+Tester: Yes, it's very user-friendly. I can update the prices and products at the store quickly and efficiently. I'm satisfied with that feature.
+
+Developer: That's fantastic! It's important to have a seamless experience when managing your products. Now, let's talk about the post and picture uploading functionality. How did that work for you?
+
+Tester: The post writing functionality is great, and I really like that, as an admin, I can delete any posts that I find inappropriate. However, I did notice that there's no like button for the posts. I think it would be a nice addition to allow users to show their appreciation for posts.
+
+Developer: That's a good point. Adding a like button is a great idea. We'll make sure to incorporate that feature into the website. Thanks for bringing it up!
+
+Tester: You're welcome! Lastly, I found the statistical information really interesting. It's helpful to have numerical data about users, posts, and products. It's something I've been wondering about for a while.
+
+Developer: I'm glad you liked the statistical information. We wanted to provide valuable insights to help you better understand the website's performance. Is there anything else you would like to add or any other suggestions you have?
+
+Tester: No, that's all for now. Overall, I'm really happy with the website and I can't wait to start using it to connect with other Konbini fans about our favorite products. Thanks for your hard work!
+
+Developer: Thank you for testing the website and providing your feedback. We're thrilled to hear that you're satisfied with it. We'll take your suggestions into account and make the necessary improvements. If you have any other ideas or concerns in the future, feel free to reach out to us.
+
