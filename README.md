@@ -66,9 +66,9 @@ After meeting with the client _(See Appendix B)_, we agreed on the following suc
 | 7       | Draw System Diagram                      | Create a visual representation of the system architecture.                                                       | 20min         | Apr 11                 | B         |
 | 8       | Draw Wireframe Diagram                   | Create a visual representation of the user interface.                                                            | 1h            | Apr 12                 | B         |
 | 9       | Draw ER diagram                          | Create a visual representation of the data model.                                                                | 15min         | Apr 12                 | B         |
-| 10      | Draw Flowchart #1 for algorithms         | Create a visual representation of the algorithm for the login system.                                                         | 20min         | Apr 13                 | B         |
-| 11      | Draw Flowchart #2 for algorithms         | Create a visual representation of the algorithm for the forum page                                                         | 30min         | Apr 13                 | B         |
-| 12      | Draw Flowchart #3 and #4 for algorithms       | Create a visual representation of the algorithm for deleting and populating in databases                               | 45min         | Apr 13                 | B         |
+| 10      | Draw Flowchart #1 for login         | Create a visual representation of the algorithm for the login system.                                                         | 20min         | Apr 13                 | B         |
+| 11      | Draw Flowchart #2 for forum         | Create a visual representation of the algorithm for the forum page                                                         | 30min         | Apr 13                 | B         |
+| 12      | Draw Flowchart #3 and #4 for delete and populate       | Create a visual representation of the algorithm for deleting and populating in databases                               | 45min         | Apr 13                 | B         |
 | 13      | Third meeting with client                | Obtain approval from the client on the design overview proposal.                                                 | 10min         | Apr 14                 | B         |
 | 14      | Write Test Plan                          | Create a detailed plan for testing the system to ensure it meets the success criteria.                           | 10min         | Apr 14                 | B         |
 | 15      | Code Python base                         | The code in which my program will be based, functions such as create_database, populate_db, and project library. | 1h            | Apr 16                 | C         |
@@ -234,7 +234,7 @@ Fig. 9 is the flow diagram for the populate database function
     if 'user' not in session:
         return redirect(url_for('login'))
 ```
-According to **Success Criteria 1**, my user needs that key pages in the website are available only to users logged in. That is why I have this code, which I use in the pages with this requirement.
+According to **Success Criteria 2**, my user needs that key pages in the website are available only to users logged in. That is why I have this code, which I use in the pages with this requirement.
 
 Following with the previous code provided, where I show how I create 'user', this first line checks with a conditional statement if the 'user' key is present in the session, which is where user data is stored after logging in. If 'user' is not present in the session, it means that the user has not logged in, so the boolean of False would return, not allowing user to visualize the page, and redirecting them to  the login page.
 
@@ -326,11 +326,11 @@ def signup():
 </main>
 {% endblock %}
 ```
-According to the client’s needs, more specifically **Success Criteria 2**, I developed a sign up system.
+Following with **Success Criteria 2**, I developed a sign up system.
 
 This code includes a Flask route for a sign-up page that allows users to create an account in my website. After clicking on the Sign Up button, user goes to ‘/signup’ URL, where they can complete a form with their email, username, and password.
 
-For this code, I have used my Computational Thinking Skills. I have used Decomposition, the process of breaking down a complex problem into more manageable parts, for the whole sign up system: checking password requirements, checking if an account already exists, inserting new user’s data in the database, etc.
+For this code, I have used my CTS. I have used Decomposition, the process of breaking down a complex problem into more manageable parts, for the whole sign up system: checking password requirements, checking if an account already exists, inserting new user’s data in the database, etc.
 
 I use Algorithmic thinking skills in the ‘password_requirements’ function. This function checks if the length of the password is at least 8, then uses pattern recognition to check if there is at least one uppercase, one lowercase, one number, and one special character in the password created by the user. Finally, it uses abstraction to return a boolean value according to if the requirements are met or not.. 
 
@@ -434,7 +434,76 @@ If the user is logged in and a program receives a POST request (user submitting 
 
 That was one problem I had during the development process: I had to figure out how to distinguish between the messages that the users receive and the messages they send. The solution was to use an SQL query to filter the data according to which messages had the name of my user as a value in different columns (WHERE receiver='{username}' ORDER BY id DESC, for example). If it was in the receiver column, I would add that to a list called ‘messages_in’, and if my user was the sender to ‘messages_out’. This technique was an adequate solution because it is a standard way of filtering data with SQL queries into a relational database and is efficient in terms of time and memory complexity. Then I would use those lists to display the messages with HTML, doing a loop instead of hard-coding to avoid breaking DRY and KISS principles.
 
+A very similar algorith is used for **Success Criterias 3 and 5**, but with different variables and different database tables.
+
 The website that helped me in the SQL queries was: https://blog.hubspot.com/marketing/sql-tutorial-introduction
+
+### Admin control
+```.html
+    {% if session['user']['username'] == "admin" %}
+    <div class="new-update">
+        <h2>New Post</h2>
+        <form class="updates-form" method="POST">
+            <label for="update-title">Title</label>
+            <input type="text" id="update-title" name="update-title" required>
+            <label for="update-content">Content</label>
+            <textarea id="update-content" name="update-content" required></textarea>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    {% endif %}
+```
+Certain parts of the website are only available for the admin, who has special priviledges. In **Success Criterias 3 and 4** it is required that admin are able to delete updates and products from the database, something that other users cannot do. For that reason, I coded the following:
+```.html
+    {% if session['user']['username'] == "admin" %}
+    <h1>Something happens here that only admin can do</h1>
+    {% endif %}
+```
+
+### Product prices table
+```.py
+# delete products
+if request.method == 'GET':
+    # get product written from form
+    idd = request.args.get('product-id')
+    # delete in database
+    db = DatabaseWorker("p4_database.db")
+    query = f"""DELETE FROM products WHERE id='{idd}'"""
+    db.run_save(query)
+    db.close()
+
+# get all products
+db = DatabaseWorker("p4_database.db")
+products = db.search("SELECT * from products ORDER BY id DESC")
+db.close()
+return render_template("p4_home.html", products=products)
+```
+```.html
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+    </tr>
+    {% for product in products %}
+    <tr>
+        <td>{{ product[1] }}</td>
+        <td>{{ product[2] }} JPY</td>
+        {% if session['user']['username'] == "admin" %}
+        <td>
+            <form class="products-form" method="GET">
+                <input type="hidden" id="product-id" name="product-id" value="{{ product[0] }}">
+                <button type="submit" class="delete-btn">Delete</button>
+            </form>
+        </td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+```
+I am displaying the table of products and their prices in the homepage, requested by **Success Criteria 4**. In addition to the use of algorithms already explain above (not shown in this sub-section), this code has a delete option only available for admin, and it displasy all the products in the database for everyone (also explained above).
+
+For deleting the products I had to overcome a challenge. When coding, I made a mistake by confusing the name of the input with a class for CSS, and I was getting multiple unclear errors that I did not know how to solve. After consultation with another developer, I discovered that the cause of my errors was a mistake in the way I wrote the "-". At the end, I discovered the importance of following the camelCase, snake_case, kebab-case and other similar conventions for different types of code and I applied those good coding practices to all my code. 
+
 
 ## Ingenuity
 Some of the good coding practices I have followed are:
