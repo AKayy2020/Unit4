@@ -219,6 +219,21 @@ Fig. 8 is the flow diagram
 ## Code
 * More details on the comments of the code
 
+### Login requirements for page visualization 
+```.py
+    # login is required for this action
+    if 'user' not in session:
+        return redirect(url_for('login'))
+```
+According to **Success Criteria 1**, my user needs that key pages in the website are available only to users logged in. That is why I have this code, which I use in the pages with this requirement.
+
+Following with the previous code provided, where I show how I create 'user', this first line checks with a conditional statement if the 'user' key is present in the session, which is where user data is stored after logging in. If 'user' is not present in the session, it means that the user has not logged in, so the boolean of False would return, not allowing user to visualize the page, and redirecting them to  the login page.
+
+
+For this I have use the KISS (Keep It Simple, Stupid!) programming principle, as it is a basic code but very useful.
+
+I learned how to do this by accessing https://pythonbasics.org/flask-sessions/ .
+
 ### Sign up page
 ![image](https://github.com/PaulaYaniz/Unit4/assets/89135778/ca2db793-c1b7-4c68-9d06-2519769904e5)
 
@@ -302,7 +317,7 @@ def signup():
 </main>
 {% endblock %}
 ```
-According to the client’s needs, more specifically Success Criteria 2, I developed a sign up system.
+According to the client’s needs, more specifically **Success Criteria 2**, I developed a sign up system.
 
 This code includes a Flask route for a sign-up page that allows users to create an account in my website. After clicking on the Sign Up button, user goes to ‘/signup’ URL, where they can complete a form with their email, username, and password.
 
@@ -323,21 +338,6 @@ If the user does not exist in the database, the function inserts the user's data
 During the development process, a problem I encountered was how to store user data and how to retrieve it later to check if a user exists or not, correctly. My solution was to use an SQLite database and a DatabaseWorker class to insert and get data in the database. I use SQLite databases to create tables, insert data, and search for data using the SQL queries. Another problem was how to securely store user passwords in the database. My solution was to use a secure password encryption algorithm and store the encrypted password in the database.
 
 For HTML, my code consists of the use of a template for all the common code parts of the website, following with the DRY (Don’t Repeat Yourself) programming principle. After that I have a h1 tag (as a title), an space for the error message in case there is one, and the form with the fields the user has to choose.
-
-### Login requirements for page visualization 
-```.py
-    # login is required for this action
-    if 'user' not in session:
-        return redirect(url_for('login'))
-```
-According to Success Criteria 1, my user needs that key pages in the website are available only to users logged in. That is why I have this code, which I use in the pages with this requirement.
-
-Following with the previous code provided, where I show how I create 'user', this first line checks with a conditional statement if the 'user' key is present in the session, which is where user data is stored after logging in. If 'user' is not present in the session, it means that the user has not logged in, so the boolean of False would return, not allowing user to visualize the page, and redirecting them to  the login page.
-
-
-For this I have use the KISS (Keep It Simple, Stupid!) programming principle, as it is a basic code but very useful.
-
-I learned how to do this by accessing https://pythonbasics.org/flask-sessions/ .
 
 ### One-to-one messages system
 ![image](https://github.com/PaulaYaniz/Unit4/assets/89135778/50ca2426-5d9c-456e-b68f-cf848d5722fb)
@@ -417,7 +417,7 @@ def messages():
 </main>
 {% endblock %}
 ```
-According to Success Criteria 6, my client needs a one-to-one messaging system.
+According to **Success Criteria 6**, my client needs a one-to-one messaging system.
 
 For doing so, I have used Algorithmic thinking: in conditional statements, loops, and SQL queries to handle user input and interact with databases. For example, Abstraction (encapsulating the database interactions in a separate class DatabaseWorker). Decomposition (breaking down the task into smaller functions, like getting messages from database, inserting new messages into database, and rendering HTML templates).
 
@@ -446,8 +446,7 @@ Example of error handling:
 def handle_error(e):
     return "Oops, there's an error. Please notify the admin in admin@gmail.com and go back", 500
 ```
-![image](https://github.com/PaulaYaniz/Unit4/assets/89135778/cd02489a-d820-4cc2-9ee2-dd5aa7e23913)
-
+![image](https://github.com/PaulaYaniz/Unit4/assets/89135778/c741853d-26a0-47fe-9949-cb8012a32874)
 # Criteria D: Functionality & Extensibility
 
 ## Functionality
