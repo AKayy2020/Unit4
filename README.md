@@ -66,9 +66,9 @@ After meeting with the client _(See Appendix B)_, we agreed on the following suc
 | 7       | Draw System Diagram                      | Create a visual representation of the system architecture.                                                       | 20min         | Apr 11                 | B         |
 | 8       | Draw Wireframe Diagram                   | Create a visual representation of the user interface.                                                            | 1h            | Apr 12                 | B         |
 | 9       | Draw ER diagram                          | Create a visual representation of the data model.                                                                | 15min         | Apr 12                 | B         |
-| 10      | Draw Flowchart #1 for algorithms         | Create a visual representation of the algorithm for XXX.                                                         | 20min         | Apr 13                 | B         |
-| 11      | Draw Flowchart #2 for algorithms         | Create a visual representation of the algorithm for XXX.                                                         | 30min         | Apr 13                 | B         |
-| 12      | Draw Flowchart #3 for algorithms         | Create a visual representation of the algorithm for yet another specific function.                               | 45min         | Apr 13                 | B         |
+| 10      | Draw Flowchart #1 for algorithms         | Create a visual representation of the algorithm for the login system.                                                         | 20min         | Apr 13                 | B         |
+| 11      | Draw Flowchart #2 for algorithms         | Create a visual representation of the algorithm for the forum page                                                         | 30min         | Apr 13                 | B         |
+| 12      | Draw Flowchart #3 and #4 for algorithms       | Create a visual representation of the algorithm for deleting and populating in databases                               | 45min         | Apr 13                 | B         |
 | 13      | Third meeting with client                | Obtain approval from the client on the design overview proposal.                                                 | 10min         | Apr 14                 | B         |
 | 14      | Write Test Plan                          | Create a detailed plan for testing the system to ensure it meets the success criteria.                           | 10min         | Apr 14                 | B         |
 | 15      | Code Python base                         | The code in which my program will be based, functions such as create_database, populate_db, and project library. | 1h            | Apr 16                 | C         |
@@ -117,7 +117,7 @@ After meeting with the client _(See Appendix B)_, we agreed on the following suc
 | 58      | Write second recommendation              | A second recommendation for improving the functionality of the website                                           | 10min         | May 9                  | E         |
 | 59      | Write third recommendation               | A third recommendation for improving the functionality of the website                                            | 10min         | May 9                  | E         |
 
-**Table 1:** Record of Task- showing the planning and working process of the project. All the steps are related to Planning, Solution Overview analysis and Development, and Functionality (criterias A, B C, and D). The target completion date and the time estimate for each task is also shown.
+**Table 1:** Record of Tasks- showing the development of the project. All the steps are related to Planning, Design, Development, Functionality, and Evaluation (criterias A, B C, D, and E). The target completion date and the time estimate for each task is also shown.
 
 
 ## Internal structure plan (design)
@@ -166,12 +166,21 @@ Fig. 6 is the flow diagram for my login system.
 
 **Figure 7:**
 
-Fig. 7 is the flow diagram 
+![project4-flowch-forum drawio](https://github.com/PaulaYaniz/Unit4/assets/89135778/b97b4b01-e5ff-45be-838e-07ba2f078380)
+
+Fig. 7 is the flow diagram for the forum page, the posts system
 
 **Figure 8:**
 
-Fig. 8 is the flow diagram 
+![project4-flowch-delete drawio](https://github.com/PaulaYaniz/Unit4/assets/89135778/1d02eff9-a149-4ec4-9782-c6193f152e3b)
 
+Fig. 8 is the flow diagram for deleting data
+
+**Figure 9:**
+
+![project4-flowch-populate drawio](https://github.com/PaulaYaniz/Unit4/assets/89135778/509d1775-ac40-4638-98c1-40852f6ae226)
+
+Fig. 9 is the flow diagram for the populate database function
 
 ## Test Plan
 | SC | TEST                                                           | DESCRIPTION                                                                                                         | PROCEDURE                                                                                                                                                                        | EXPECTED OUTPUT                                                                                                                                                     |
