@@ -332,7 +332,7 @@ For HTML, my code consists of the use of a template for all the common code part
 ```
 According to Success Criteria 1, my user needs that key pages in the website are available only to users logged in. That is why I have this code, which I use in the pages with this requirement.
 
-Following with the previous code provided, where I show how I create 'user', this first line checks with a conditional statement if the ‘user’ key is present in the session, which is where user data is stored after logging in. If ‘user’ is not present in the session, it means that the user has not logged in, so the boolean of False would return, not allowing user to visualize the page, and redirecting them to  the login page.
+Following with the previous code provided, where I show how I create 'user', this first line checks with a conditional statement if the 'user' key is present in the session, which is where user data is stored after logging in. If 'user' is not present in the session, it means that the user has not logged in, so the boolean of False would return, not allowing user to visualize the page, and redirecting them to  the login page.
 
 
 For this I have use the KISS (Keep It Simple, Stupid!) programming principle, as it is a basic code but very useful.
