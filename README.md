@@ -117,7 +117,7 @@ After meeting with the client _(See Appendix B)_, we agreed on the following suc
 | 58      | Write second recommendation              | A second recommendation for improving the functionality of the website                                           | 10min         | May 9                  | E         |
 | 59      | Write third recommendation               | A third recommendation for improving the functionality of the website                                            | 10min         | May 9                  | E         |
 
-**Table 2:** Record of Task- showing the planning and working process of the project. All the steps are related to Planning, Solution Overview analysis and Development, and Functionality (criterias A, B C, and D). The target completion date and the time estimate for each task is also shown.
+**Table 1:** Record of Task- showing the planning and working process of the project. All the steps are related to Planning, Solution Overview analysis and Development, and Functionality (criterias A, B C, and D). The target completion date and the time estimate for each task is also shown.
 
 
 ## Internal structure plan (design)
@@ -151,18 +151,27 @@ Fig. 3 is the ER diagram for the database that my program uses.
 Fig. 4 is a screenshot of the tables in the database of my program.
 
 ### UML Diagrams
-**Figure 4:**
+**Figure 5:**
 
 ![project4-uml drawio](https://github.com/PaulaYaniz/Unit4/assets/89135778/2e5db87f-42fd-4cba-8690-612b0f13420b)
 
-Fig. 4 is the UML diagram for the class of my program.
+Fig. 5 is the UML diagram for the class of my program.
 
 ### Flow Diagrams
+**Figure 6:**
+
 ![project4-flowch-login drawio](https://github.com/PaulaYaniz/Unit4/assets/89135778/c206b8b5-5f28-4a13-8a70-1ab7a20ca3f5)
 
-**Figure 5**
+Fig. 6 is the flow diagram for my login system.
 
-Fig. 5 is the flow diagram for my login system.
+**Figure 7:**
+
+Fig. 7 is the flow diagram 
+
+**Figure 8:**
+
+Fig. 8 is the flow diagram 
+
 
 ## Test Plan
 | SC | TEST                                                           | DESCRIPTION                                                                                                         | PROCEDURE                                                                                                                                                                        | EXPECTED OUTPUT                                                                                                                                                     |
@@ -183,7 +192,7 @@ Fig. 5 is the flow diagram for my login system.
 | -  | Quality of code review (non-functional)                        | Use of comments, tabs, and developer-friendly files and variable names                                              | Check if the program is developer-friendly                                                                                                                                       | Program will have comments on every step of the code, and variable names are easy to understand.                                                                    |
 | -  | File organisation review (non-functional)                      | Are all files organised? Folders, files, etc                                                                        | Check Pycharm folder and delete files that have not been used for the project.                                                                                                   | On the project folder all files should have user-friendly names. All files are organised inside the folder.                                                         |
 
-**Table 1:** Test plan- showing the test plan for my website. The description, expected output, and procedure for each test is also shown.
+**Table 2:** Test plan- showing the test plan for my website. The description, expected output, and procedure for each test is also shown.
 
 # Criteria C: Development
 
@@ -471,7 +480,7 @@ The product satisfied all the success criteria initially established.
 
 
 # APPENDIX
-### Appendix A
+### Appendix A: First meeting, problem definition
 DEVELOPER: Good morning! Thank you for meeting with me today. You contacted me as a developer, what do you need help with?
 
 CLIENT: I run a little convenience store at a local school and I have trouble knowing what products my customers want the most, and how to promote interaction between them. I am looking for a way to improve communication with customers and get feedback on the products I sell.
@@ -490,7 +499,7 @@ CLIENT: End of the school year is soon, so I would need my website quite fast, l
 
 DEVELOPER: I will see what I can do for you. Let’s have a second meeting soon so I can present you the rationale for the proposed solution and the success criteria.
 
-### Appendix B
+### Appendix B: Second meeting, design
 DEVELOPER: Hello beloved customer! It is great to see you again. 
 
 CLIENT: Hello! Do you have the rationale for the proposed solution as we agreed last meeting?
