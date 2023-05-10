@@ -124,28 +124,36 @@ After meeting with the client _(See Appendix B)_, we agreed on the following suc
 I will design and make a SNS website for promoting business-customer relations for a client who is a convenience store manager at a local school. The program will consist on an website for being able to write posts and comments about the Konbini's products, plus being able to read news and updates about it and some statistical information. It is constructed using the softwares Python, HTML, CSS, and SQLite. It will take 3 weeks to make and will be evaluated according to the criteria A, B, C, D, and E.
 
 ### System Diagram
+**Figure 1:**
+
 ![project_unit4](https://github.com/PaulaYaniz/Unit4/assets/89135778/5b2c417a-01a0-4d1a-9421-0ae7f3b251d8)
-**Figure 1**
 
 Fig.1 is the System Diagram. It shows the brand and type of the computer, with its specifications and the Operative System is has. The program runs in Python 3.8 and uses different languages: Python, HTML, CSS, SQLite.
 
 ### Wireframe Diagram
-![project4-wireframe drawio](https://github.com/PaulaYaniz/Unit4/assets/89135778/4e1ce61a-8b53-4e1c-9055-8d9e2835f32b)
 **Figure 2:**
+
+![project4-wireframe drawio](https://github.com/PaulaYaniz/Unit4/assets/89135778/4e1ce61a-8b53-4e1c-9055-8d9e2835f32b)
 
 Fig.2 is the Wirefram Diagram for the program.
 
 ### Entity Relationship (ER) Diagram
+**Figure 3:**
+
 ![project4-erd drawio](https://github.com/PaulaYaniz/Unit4/assets/89135778/2b4ec19d-93d4-40ed-aac2-8a987a4f255e)
 
-**Figure 3:**
+**Figure 4:**
+
+![project4-databases drawio](https://github.com/PaulaYaniz/Unit4/assets/89135778/35f5a367-951e-49a2-b8e7-82af95ef7d9a)
 
 Fig. 3 is the ER diagram for the database that my program uses.
 
-### UML Diagrams
-![project4-uml drawio](https://github.com/PaulaYaniz/Unit4/assets/89135778/2e5db87f-42fd-4cba-8690-612b0f13420b)
+Fig. 4 is a screenshot of the tables in the database of my program.
 
+### UML Diagrams
 **Figure 4:**
+
+![project4-uml drawio](https://github.com/PaulaYaniz/Unit4/assets/89135778/2e5db87f-42fd-4cba-8690-612b0f13420b)
 
 Fig. 4 is the UML diagram for the class of my program.
 
