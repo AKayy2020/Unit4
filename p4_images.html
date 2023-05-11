@@ -1,0 +1,15 @@
+{% extends "p4_base_logged.html" %}
+{% block content %}
+<main>
+    <h1>Images</h1>
+    <form method="POST">
+        <label for="image-url">Image URL:</label>
+        <input type="text" name="image-url" id="image-url" required>
+        <br>
+        <button type="submit">Upload Image</button>
+    </form>
+    {% for image_url in image_urls %}
+        <img src="{{ image_url }}" alt="Image">
+    {% endfor %}
+</main>
+{% endblock %}

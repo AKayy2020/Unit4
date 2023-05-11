@@ -1,0 +1,18 @@
+{% extends "p4_base_landing.html" %}
+{% block content %}
+<main>
+    <h1>Login</h1>
+    {% if error_msg %}
+        <p>{{ error_msg }}</p>
+    {% endif %}
+    <form method="POST" action="">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username" required autocomplete="username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Login" class="submit-btn">
+    </form>
+
+    <p>You are not registered? <a href="/signup">Sign up</a>.</p>
+</main>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "p4_base_logged.html" %}
+{% block content %}
+<main class="forum">
+    <div class="forum-grid">
+        <div class="new-post">
+            <h2>New Message</h2>
+            <form class="post-form" method="POST">
+                <label for="message-receiver">To:</label>
+                <input type="text" id="message-receiver" name="message-receiver" required>
+                <label for="message-title">Title:</label>
+                <input type="text" id="message-title" name="message-title" required>
+                <label for="message-content">Content:</label>
+                <textarea id="message-content" name="message-content" rows="8" required></textarea>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+        <div class="forum-posts">
+            <h2>Inbox</h2>
+            {% for message in messages_in %}
+            <div class="post">
+                <h3 class="post-title">{{ message[3] }}</h3>
+                <p class="post-content">{{ message[4] }}</p>
+                <div class="post-meta">
+                    <span>Received from {{ message[1] }} on {{ message[5] }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+         <div class="forum-posts">
+            <h2>Outbox</h2>
+            {% for message in messages_out %}
+            <div class="post">
+                <h3 class="post-title">{{ message[3] }}</h3>
+                <p class="post-content">{{ message[4] }}</p>
+                <div class="post-meta">
+                    <span>Sent to {{ message[2] }} on {{ message[5] }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}

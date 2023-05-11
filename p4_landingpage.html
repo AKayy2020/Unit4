@@ -1,0 +1,36 @@
+{% extends "p4_base_landing.html" %}
+{% block content %}
+<main>
+	<div>
+		<h2 style="color: darkorange; text-align: center">Please sign up to receive the last Konbini updates, write comments, and upload pictures. Welcome!</h2>
+	</div>
+
+	<div>
+		<table>
+			<tr>
+				<td>
+					<h2 style="text-align: center">Some Stats</h2>
+					<p>Number of users registered: {{ num_users }}</p>
+					<p>Number of posts written: {{ num_posts }}</p>
+					<p>Average number of posts written per user: {{ avg_posts }}</p>
+					<p>Available products at Konbini: {{ num_products }}</p>
+					<p>Average price of the products: {{ avg_price }} JPY</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="photo-grid">
+		<div class="feature">
+			<img src="/static/images/forum_section.png" alt="Forum Section">
+			<p>In Konbinet you can write comments with your opinions about the products you buy!</p>
+		</div>
+
+		<div class="feature">
+			<img src="/static/images/updates_section.png" alt="Updates Section">
+			<p>You can also receive the latest news in relation with Konbini</p>
+		</div>
+	</div>
+	<p>And many more things! Sign up to discover! Upload pictures, see your account, look at the latest prices...</p>
+</main>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "p4_base_landing.html" %}
+{% block content %}
+<main>
+    <h1>Sign Up</h1>
+    <h3 class="error">{{ error_msg }}</h3>
+    <form action="/signup" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Sign Up" class="submit-btn">
+    </form>
+
+    <p>You are already registered? <a href="/login">Log in</a>.</p>
+</main>
+{% endblock %}

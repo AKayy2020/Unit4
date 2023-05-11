@@ -1,0 +1,35 @@
+{% extends "p4_base_logged.html" %}
+{% block content %}
+<main class="forum">
+    <div class="forum-grid">
+        <div class="new-post">
+            <h2>New Post</h2>
+            <form class="post-form" method="POST">
+                <label for="post-title">Title:</label>
+                <input type="text" id="post-title" name="post-title" required>
+                <label for="post-content">Content:</label>
+                <textarea id="post-content" name="post-content" required></textarea>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+        <div class="forum-posts">
+            <h2>Posts</h2>
+            {% for post in posts %}
+            <div class="post">
+                <h3 class="post-title">{{ post[1] }}</h3>
+                <p class="post-content">{{ post[2] }}</p>
+                <div class="post-meta">
+                    <span>Posted by {{ post[3] }} on {{ post[4] }}</span>
+                </div>
+                {% if session['user']['username'] == "admin" %}
+                <form class="posts-form" method="GET">
+                    <input type="hidden" id="post-id" name="post-id" value="{{ post[0] }}">
+                    <button type="submit" class="delete-btn">Delete</button>
+                </form>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "p4_base_logged.html" %}
+{% block content %}
+<main>
+    <h1>My Account</h1>
+    <div class="profile">
+        <h2>Profile Information</h2>
+        {% if session.get('user') %}
+            <p><strong>Username:</strong> {{ user_data['username'] }}</p>
+        {% endif %}
+        <p><strong>Email:</strong> {{ user_data['email'] }}</p>
+        <p><strong>Joined:</strong> {{ user_data['joined'] }}</p>
+    </div>
+    <div class="posts">
+        <h2>My Posts</h2>
+        {% if posts %}
+            {% for post in posts %}
+                <div class="post">
+                    <h3 style="text-align: center">{{ post[1] }}</h3>
+                    <p>{{ post[2] }}</p>
+                    <p><em>Posted on {{ post[4] }}</em></p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Posts made will go here.</p>
+        {% endif %}
+    </div>
+</main>
+{% endblock %}

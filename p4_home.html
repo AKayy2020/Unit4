@@ -1,0 +1,58 @@
+{% extends "p4_base_logged.html" %}
+{% block content %}
+<main>
+    <div class="title">
+        <h1>WELCOME!!!</h1>
+    </div>
+    {% if session['user']['username'] == "admin" %}
+    <h2 style="text-align: center">ADMIN AREA</h2>
+    <div class="new-product">
+        <h2 style="text-align: center">New Product</h2>
+        <form class="products-form" method="POST">
+            <label for="product-name">Name</label>
+            <input type="text" id="product-name" name="product-name" required>
+
+            <label for="product-price">Price</label>
+            <input type="number" id="product-price" name="product-price" required>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    {% endif %}
+
+    <div>
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+            {% for product in products %}
+            <tr>
+                <td>{{ product[1] }}</td>
+                <td>{{ product[2] }} JPY</td>
+                {% if session['user']['username'] == "admin" %}
+                <td>
+                    <form class="products-form" method="GET">
+                        <input type="hidden" id="product-id" name="product-id" value="{{ product[0] }}">
+                        <button type="submit" class="delete-btn">Delete</button>
+                    </form>
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="photo-grid">
+        <div class="feature-1">
+            <img src="/static/images/monster.jpg" alt="Monster Energy Drink">
+            <p>More Monster Energy drink coming soon!</p>
+        </div>
+
+        <div class="feature-2">
+            <img src="/static/images/ramen.jpg" alt="Instant Ramen">
+            <p>We won't sell more instant ramen. Sorry for any inconvenience caused!</p>
+        </div>
+    </div>
+</main>
+{% endblock %}
